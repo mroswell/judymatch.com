@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Memory Game</title>
+  <meta name="description" content="">
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Memory Game</h1>
+  </header>
+
+  <section class="score-panel">
+    <ul class="stars">
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+    </ul>
+
+    <span class="moves">0</span> Moves
+
+    <div id="timer">00:00:00</div>
+
+    <div class="restart">
+      <button type="button" class="btn btn-info btn-sm">
+        <i class="fa fa-repeat"></i>
+      </button>
+    </div>
+  </section>
+
+  <ul class="deck">
+    <li class="card">
+      <i class="fa fa-diamond"></i>
+    </li>
+    <li class="card">
+      <img class="jk1" src="images/judyken/square_judy_ken.png" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="jk1" src="images/judyken/square_judy_ken.png" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="jkbes" src="images/judyken/jkblackeyedsusan.png" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="jk" src="images/judyken/square_00141_s_8abppp5ct0085.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <i class="fa fa-diamond"></i>
+    </li>
+
+    <li class="card">
+      <img class="jk" src="images/judyken/square_00141_s_8abppp5ct0085.jpg" alt="" width="113">
+    </li>
+    <li class="card">
+      <img class="canoe" src="images/judyken/canoe_00795_n_13abppp34y0780.jpg"></img>
+    </li>
+    <li class="card">
+      <i class="fa fa-heart"></i>
+    </li>
+    <li class="card">
+      <i class="fa fa-heart"></i>
+    </li>
+
+    <li class="card">
+      <img class="jkhappy" src="images/judyken/jkhappy1.png" alt="" width="113">
+    </li>
+    <li class="card">
+      <img class="jkcouch" src="images/judyken/jkcouch.jpg" alt="" width="113">
+    </li>
+    <li class="card">
+      <i class="fa fa-diamond"></i>
+    </li>
+    <li class="card">
+      <img class="jkbes" src="images/judyken/jkblackeyedsusan.png" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="canoe" src="images/judyken/canoe_00795_n_13abppp34y0780.jpg"></img>
+    </li>
+    <li class="card">
+      <img class="jkhappy" src="images/judyken/jkhappy1.png" alt="" width="113">
+    </li>
+    <li class="card">
+      <img class="jkcouch" src="images/judyken/jkcouch.jpg" alt="" width="113">
+    </li>
+    <li class="card">
+      <i class="fa fa-diamond"></i>
+    </li>
+  </ul>
+</div>
+<div class="winPage closed">
+  <DIV>
+  <h1>Congratulations!</h1>
+  <p>You have finished the<br>JUDY AND KEN GAME<br>with <span class="movesCount">0</span> Moves and <span class="starsCount">0</span> Stars.</p>
+  <p>Your time: <span class="finalTime"></span></p>
+  <p>Wanna play again?</p>
+  <button type="button" role="button" class="playAgain btn btn-info">Play again!</button>
+  </DIV>
+</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

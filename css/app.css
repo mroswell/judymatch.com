@@ -1,0 +1,193 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    /* width: 660px; */
+    width: 1349px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #ddbf4f 0%, #d33a32 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.65);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.deck .card {
+    /*height: 125px;*/
+    /*width: 125px;*/
+    height: 187.5px;
+    width: 187.5px;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.65);
+    pointer-events: auto;
+}
+.deck .card:nth-child(6n) { margin-right: unset; }
+
+.deck .card.open {
+    transform: rotateY(180deg);
+    transition: 0.3s;
+    background: #2f91f9;
+    cursor: default;
+    pointer-events: none;
+}
+
+.deck .card.close {
+    transform: rotateY(360deg);
+    transition: 0.2s;
+    transform-style: preserve-3d;
+    background: #2e3d49;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #c41b41; /*#1bc45f;*/
+    font-size: 33px;
+}
+
+.deck img {
+    transform: scale(0, 1);
+    /* added style: object-fit locks your image into its space. width/height 90% will keep a small border no matter the card size */
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+    /*transition: transform ease-in 0.15s 0s;*/
+}
+
+.deck .card.show img {
+    transition: transform ease-out 0.15s 0.15s;
+    transform: scale(1);
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+    color: #3572a8;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.score-panel #timer {
+    display: inline-block;
+    text-align: center;
+    color: white;
+    margin-left: 40px;
+    border-radius: 5px;
+    width: 90px;
+    height: 27px;
+    background-color: #3572a8;
+}
+
+.restart button {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.winPage {
+    z-index: 1000;
+    top: 35%;
+    left: 50%;
+    border-style: solid;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 370px;
+    opacity: 1;
+    transition: 1s;
+    animation-name: animatetop;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+}
+
+.winPage.closed {
+    display: none;
+    z-index: 1;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
