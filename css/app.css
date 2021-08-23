@@ -178,7 +178,7 @@ h1 {
     opacity: 1;
     transition: 1s;
     animation-name: animatetop;
-    animation-duration: 0.25s;
+    animation-duration: 0.75s;
     animation-timing-function: linear;
 }
 
