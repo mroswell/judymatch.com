@@ -110,8 +110,8 @@ h1 {
 
 @media (max-width: 480px) {
     .deck .card {
-        height: calc((100vw - 32px) / 3 - 8px);
-        width: calc((100vw - 32px) / 3 - 8px);
+        height: calc((100vw - 32px) / 4 - 8px);
+        width: calc((100vw - 32px) / 4 - 8px);
     }
 }
 
