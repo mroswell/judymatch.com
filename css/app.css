@@ -33,13 +33,19 @@ h1 {
     margin-bottom: 20px;
 }
 
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}
+
 /*
  * Styles for the deck of cards
  */
 
 .deck {
-    /* width: 660px; */
-    width: 1349px;
+    width: min(1349px, calc(100vw - 20px));
     min-height: 680px;
     background: linear-gradient(160deg, #ddbf4f 0%, #d33a32 100%);
     padding: 32px;
@@ -47,16 +53,15 @@ h1 {
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.65);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0 0 3em;
     z-index: 2;
     pointer-events: none;
+    gap: 10px;
 }
 
 .deck .card {
-    /*height: 125px;*/
-    /*width: 125px;*/
     height: 187.5px;
     width: 187.5px;
     margin-right: 32px;
@@ -73,6 +78,107 @@ h1 {
     pointer-events: auto;
 }
 .deck .card:nth-child(6n) { margin-right: unset; }
+
+/* Mobile responsive cards */
+@media (max-width: 1400px) {
+    .deck {
+        justify-content: center;
+        padding: 16px;
+    }
+    
+    .deck .card {
+        height: calc((100vw - 64px) / 6 - 16px);
+        width: calc((100vw - 64px) / 6 - 16px);
+        margin: 8px;
+    }
+    
+    .deck .card:nth-child(6n) { margin: 8px; }
+}
+
+@media (max-width: 768px) {
+    .deck {
+        padding: 8px;
+    }
+    
+    .deck .card {
+        height: calc((100vw - 48px) / 4 - 8px);
+        width: calc((100vw - 48px) / 4 - 8px);
+        margin: 4px;
+    }
+    
+    .deck .card:nth-child(4n) { margin: 4px; }
+    .deck .card:nth-child(6n) { margin: 4px; }
+}
+
+@media (max-width: 480px) {
+    .deck .card {
+        height: calc((100vw - 32px) / 3 - 8px);
+        width: calc((100vw - 32px) / 3 - 8px);
+    }
+}
+
+/* Landscape mode for phones - typical landscape dimensions 667-926px width, 375-428px height */
+@media (orientation: landscape) and (max-height: 450px) {
+    .container {
+        padding-top: 5px;
+    }
+    
+    h1 {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+    
+    .score-panel {
+        margin-bottom: 5px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .score-panel #timer {
+        margin-left: 0;
+        height: 20px;
+        width: 70px;
+        font-size: 11px;
+        line-height: 20px;
+    }
+    
+    .score-panel .restart {
+        float: none;
+    }
+    
+    .deck {
+        width: calc(100vw - 10px);
+        min-height: unset;
+        height: calc(100vh - 80px);
+        padding: 8px;
+        margin: 0;
+        gap: 4px;
+    }
+    
+    /* 6x3 grid for landscape */
+    .deck .card {
+        height: calc((100vh - 100px) / 3 - 8px);
+        width: calc((100vh - 100px) / 3 - 8px);
+        max-width: calc((100vw - 40px) / 6 - 6px);
+        max-height: calc((100vw - 40px) / 6 - 6px);
+        margin: 2px;
+    }
+    
+    .deck .card:nth-child(n) { 
+        margin: 2px; 
+    }
+    
+    .deck .card.show {
+        font-size: 20px;
+    }
+    
+    .deck .card.match {
+        font-size: 20px;
+    }
+}
 
 .deck .card.open {
     transform: rotateY(180deg);
@@ -119,9 +225,24 @@ h1 {
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    width: min(345px, calc(100vw - 20px));
     margin-bottom: 10px;
     z-index: 2;
+}
+
+@media (max-width: 480px) {
+    .score-panel {
+        text-align: center;
+        width: 100%;
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    
+    .score-panel #timer {
+        margin-left: 10px;
+        width: 70px;
+        font-size: 12px;
+    }
 }
 
 .score-panel .stars {
@@ -173,13 +294,31 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 400px;
+    width: min(400px, calc(100vw - 40px));
     height: 370px;
     opacity: 1;
     transition: 1s;
     animation-name: animatetop;
     animation-duration: 0.75s;
     animation-timing-function: linear;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .winPage {
+        width: calc(100vw - 20px);
+        height: auto;
+        min-height: 350px;
+    }
+    
+    .winPage h1 {
+        font-size: 24px;
+    }
+    
+    .winPage p {
+        font-size: 14px;
+    }
 }
 
 .winPage.closed {

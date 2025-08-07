@@ -9,6 +9,11 @@ let cardCounter = 0;
 document.querySelector(".restart").addEventListener("click", restart);
 document.querySelector(".deck").addEventListener("click", function() {stopTimer = false; timerStart()});
 document.querySelector(".deck").addEventListener("click", cardOpen);
+document.querySelector(".deck").addEventListener("touchstart", function() {stopTimer = false; timerStart()}, {passive: true});
+document.querySelector(".deck").addEventListener("touchstart", function(evt) {
+    evt.preventDefault();
+    cardOpen(evt);
+}, {passive: false});
 document.querySelector(".playAgain").addEventListener("click", function() {
     document.querySelector(".winPage").className = "winPage closed"; restart()});
 document.addEventListener("ready", restart);
