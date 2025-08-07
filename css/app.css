@@ -160,10 +160,9 @@ h1 {
     
     /* 6x3 grid for landscape */
     .deck .card {
-        height: calc((100vh - 100px) / 3 - 8px);
-        width: calc((100vh - 100px) / 3 - 8px);
-        max-width: calc((100vw - 40px) / 6 - 6px);
-        max-height: calc((100vw - 40px) / 6 - 6px);
+        width: calc((100vw - 40px) / 6 - 6px);
+        height: calc((100vw - 40px) / 6 - 6px);
+        max-height: calc((100vh - 100px) / 3 - 8px);
         margin: 2px;
     }
     
