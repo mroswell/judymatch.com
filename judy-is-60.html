@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judy is 60 - Memory Game</title>
+  <meta name="description" content="A memory game celebrating Judy's 60th birthday">
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Judy is 60! Memory Game</h1>
+  </header>
+
+  <section class="score-panel">
+    <ul class="stars">
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+    </ul>
+
+    <span class="moves">0</span> Moves
+
+    <div id="timer">00:00:00</div>
+
+    <div class="restart">
+      <button type="button" class="btn btn-info btn-sm">
+        <i class="fa fa-repeat"></i>
+      </button>
+    </div>
+  </section>
+
+  <ul class="deck">
+    <li class="card">
+      <img class="judy-portrait-1" src="images/60/yp-Ellie&Jen_Wedding-6-2.jpeg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-2" src="images/60/yp-IMG_0038-4.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-3" src="images/60/yp-IMG_0380-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-4" src="images/60/yp-IMG_0397-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-5" src="images/60/yp-IMG_1767-2.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-6" src="images/60/yp-IMG_1987-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-1" src="images/60/yp-Ellie&Jen_Wedding-6-2.jpeg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-7" src="images/60/yp-IMG_2853-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-8" src="images/60/yp-Screenshot_9_12_50-2.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-9" src="images/60/yp-b9271e1e-ec08-4350-af87-c11f6fe435d6-2.jpeg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-2" src="images/60/yp-IMG_0038-4.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-3" src="images/60/yp-IMG_0380-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-4" src="images/60/yp-IMG_0397-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-5" src="images/60/yp-IMG_1767-2.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-6" src="images/60/yp-IMG_1987-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-7" src="images/60/yp-IMG_2853-1.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-8" src="images/60/yp-Screenshot_9_12_50-2.jpg" width="113" alt="">
+    </li>
+    <li class="card">
+      <img class="judy-portrait-9" src="images/60/yp-b9271e1e-ec08-4350-af87-c11f6fe435d6-2.jpeg" width="113" alt="">
+    </li>
+  </ul>
+</div>
+<div class="winPage closed">
+  <DIV>
+  <h1>Congratulations!</h1>
+  <p>You have finished the<br>JUDY IS 60 GAME<br>with <span class="movesCount">0</span> Moves and <span class="starsCount">0</span> Stars.</p>
+  <p>Your time: <span class="finalTime"></span></p>
+  <p>Wanna play again?</p>
+  <button type="button" role="button" class="playAgain btn btn-info">Play again!</button>
+  </DIV>
+</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
