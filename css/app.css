@@ -31,12 +31,48 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.level-buttons {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.level-btn {
+    padding: 5px 15px;
+    font-size: 14px;
+    font-family: 'Coda', cursive;
+    background-color: #2e3d49;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.level-btn:hover {
+    background-color: #3572a8;
+}
+
+.level-btn.active {
+    background-color: #c41b41;
+    font-weight: bold;
 }
 
 @media (max-width: 480px) {
     h1 {
         font-size: 20px;
         margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .level-btn {
+        padding: 4px 12px;
+        font-size: 12px;
     }
 }
 
@@ -111,7 +147,12 @@ h1 {
     
     h1 {
         font-size: 18px;
-        margin: 5px 0;
+        margin: 5px 0 10px 0;
+    }
+    
+    .level-btn {
+        padding: 3px 10px;
+        font-size: 11px;
     }
     
     .score-panel {
