@@ -6,17 +6,32 @@ let ready = true;
 let stopTimer = false;
 let cardCounter = 0;
 
-document.querySelector(".restart").addEventListener("click", restart);
-document.querySelector(".deck").addEventListener("click", function() {stopTimer = false; timerStart()});
-document.querySelector(".deck").addEventListener("click", cardOpen);
-document.querySelector(".deck").addEventListener("touchstart", function() {stopTimer = false; timerStart()}, {passive: true});
-document.querySelector(".deck").addEventListener("touchstart", function(evt) {
-    evt.preventDefault();
-    cardOpen(evt);
-}, {passive: false});
-document.querySelector(".playAgain").addEventListener("click", function() {
-    document.querySelector(".winPage").className = "winPage closed"; restart()});
-document.addEventListener("ready", restart);
+// Wait for DOM to be ready
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".restart").addEventListener("click", restart);
+    document.querySelector(".deck").addEventListener("click", function() {stopTimer = false; timerStart()});
+    document.querySelector(".deck").addEventListener("click", cardOpen);
+    document.querySelector(".deck").addEventListener("touchstart", function() {stopTimer = false; timerStart()}, {passive: true});
+    document.querySelector(".deck").addEventListener("touchstart", function(evt) {
+        evt.preventDefault();
+        cardOpen(evt);
+    }, {passive: false});
+    document.querySelector(".playAgain").addEventListener("click", function() {
+        document.querySelector(".winPage").className = "winPage closed"; restart()});
+    
+    // Add close button functionality
+    setTimeout(function() {
+        const closeBtn = document.querySelector(".close-modal");
+        if (closeBtn) {
+            closeBtn.onclick = function() {
+                console.log("Close button clicked!");
+                document.querySelector(".winPage").classList.add("closed");
+            };
+        }
+    }, 100);
+    
+    restart();
+});
 // Unlocking clicked cards and comparing them
 function cardOpen(evt) {
     console.log(evt.target.className);
