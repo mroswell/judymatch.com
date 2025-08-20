@@ -5,6 +5,7 @@ let card2Parent = '';
 let ready = true;
 let stopTimer = false;
 let cardCounter = 0;
+let isFirstLoad = true; // Track if this is the first load
 
 // Wait for DOM to be ready
 document.addEventListener("DOMContentLoaded", function() {
@@ -102,13 +103,23 @@ function restart() {
     document.querySelector(".winPage").className = "winPage closed";
 
     let cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
-    cards = shuffle(cards);
-    const deck = document.querySelector(".deck");
-
+    
+    // Only shuffle if it's not the first load
+    if (!isFirstLoad) {
+        cards = shuffle(cards);
+        const deck = document.querySelector(".deck");
+        for (let i = 0; i < cards.length; i++) {
+            deck.appendChild(cards[i]);
+        }
+    }
+    
+    // Reset all cards to face down
     for (let i = 0; i < cards.length; i++) {
-        deck.appendChild(cards[i]);
         cards[i].className = "card";
     }
+    
+    // After first load, always shuffle on restart
+    isFirstLoad = false;
 
     ready = true;
     stopTimer = true;
