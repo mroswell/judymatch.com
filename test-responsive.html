@@ -51,23 +51,39 @@
             font-size: 24px;
         }
         
-        /* Mobile landscape test - larger cards */
-        @media (orientation: landscape) and (max-height: 600px) {
+        /* Mobile landscape test - fill viewport */
+        @media (orientation: landscape) and (max-height: 800px) {
             .test-grid {
                 grid-template-columns: repeat(4, 1fr);
+                gap: 5px;
+                padding: 10px;
+            }
+            
+            .test-card {
+                height: calc((100vh - 150px) / 3);
+                aspect-ratio: unset;
+                font-size: 20px;
+            }
+            
+            body {
+                padding: 5px;
+            }
+            
+            h2 {
+                font-size: 16px;
+                margin: 10px 0;
+            }
+        }
+        
+        @media (orientation: landscape) and (max-height: 600px) {
+            .test-grid {
                 gap: 4px;
                 padding: 8px;
             }
             
             .test-card {
-                min-height: 100px;
-                max-height: 140px;
-                aspect-ratio: unset;
+                height: calc((100vh - 120px) / 3);
                 font-size: 18px;
-            }
-            
-            body {
-                padding: 5px;
             }
         }
         
@@ -78,8 +94,7 @@
             }
             
             .test-card {
-                min-height: 80px;
-                max-height: 110px;
+                height: calc((100vh - 100px) / 3);
                 font-size: 16px;
             }
         }
@@ -91,9 +106,13 @@
             }
             
             .test-card {
-                min-height: 65px;
-                max-height: 85px;
+                height: calc((100vh - 80px) / 3);
                 font-size: 14px;
+            }
+            
+            h2 {
+                font-size: 14px;
+                margin: 5px 0;
             }
         }
     </style>

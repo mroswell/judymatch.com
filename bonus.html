@@ -25,7 +25,7 @@
     }
 
     /* Landscape mobile - optimize for horizontal viewing */
-    @media (orientation: landscape) and (max-height: 600px) {
+    @media (orientation: landscape) and (max-height: 800px) {
       .container {
         padding-top: 5px;
       }
@@ -42,9 +42,10 @@
       
       .bonus-deck {
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(100px, 140px);
-        gap: 4px;
-        padding: 8px;
+        /* Make cards take up most of viewport height */
+        grid-auto-rows: calc((100vh - 100px) / 3);
+        gap: 5px;
+        padding: 10px;
         width: 98vw;
         max-width: none;
       }
@@ -55,13 +56,13 @@
       
       .bonus-deck .card.show img,
       .bonus-deck .card.match img {
-        width: 90%;
-        height: 90%;
+        width: 92%;
+        height: 92%;
       }
     }
 
-    /* Small landscape (phones under 500px height) */
-    @media (orientation: landscape) and (max-height: 500px) {
+    /* Medium landscape (phones under 600px height) */
+    @media (orientation: landscape) and (max-height: 600px) {
       h1 {
         font-size: 14px;
         margin: 4px 0 6px 0;
@@ -73,7 +74,18 @@
       }
       
       .bonus-deck {
-        grid-auto-rows: minmax(80px, 110px);
+        /* Adjust for smaller viewport */
+        grid-auto-rows: calc((100vh - 80px) / 3);
+        gap: 4px;
+        padding: 8px;
+      }
+    }
+
+    /* Small landscape (phones under 500px height) */
+    @media (orientation: landscape) and (max-height: 500px) {
+      .bonus-deck {
+        /* Further adjustment for small screens */
+        grid-auto-rows: calc((100vh - 70px) / 3);
         gap: 3px;
         padding: 6px;
       }
@@ -108,7 +120,7 @@
       }
       
       .bonus-deck {
-        grid-auto-rows: minmax(65px, 85px);
+        grid-auto-rows: calc((100vh - 60px) / 3);
         gap: 2px;
         padding: 4px;
       }
