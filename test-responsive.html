@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .viewport-info {
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            background: linear-gradient(160deg, #ddbf4f 0%, #d33a32 100%);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .test-card {
+            aspect-ratio: 3/4;
+            background: #2e3d49;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        /* Mobile landscape test */
+        @media (orientation: landscape) and (max-height: 600px) {
+            .test-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3px;
+                padding: 6px;
+            }
+            
+            .test-card {
+                aspect-ratio: 4/3;
+                font-size: 16px;
+            }
+            
+            body {
+                padding: 5px;
+            }
+        }
+        
+        @media (orientation: landscape) and (max-height: 400px) {
+            .test-grid {
+                gap: 2px;
+                padding: 4px;
+            }
+            
+            .test-card {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="viewport-info">
+        <div>Width: <span id="width"></span>px</div>
+        <div>Height: <span id="height"></span>px</div>
+        <div>Orientation: <span id="orientation"></span></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>4×3 Grid Test (Bonus Round Layout)</h2>
+        <div class="test-grid">
+            <div class="test-card">1</div>
+            <div class="test-card">2</div>
+            <div class="test-card">3</div>
+            <div class="test-card">4</div>
+            <div class="test-card">5</div>
+            <div class="test-card">6</div>
+            <div class="test-card">7</div>
+            <div class="test-card">8</div>
+            <div class="test-card">9</div>
+            <div class="test-card">10</div>
+            <div class="test-card">11</div>
+            <div class="test-card">12</div>
+        </div>
+    </div>
+    
+    <script>
+        function updateViewportInfo() {
+            document.getElementById('width').textContent = window.innerWidth;
+            document.getElementById('height').textContent = window.innerHeight;
+            document.getElementById('orientation').textContent = 
+                window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+        }
+        
+        updateViewportInfo();
+        window.addEventListener('resize', updateViewportInfo);
+    </script>
+</body>
+</html>
