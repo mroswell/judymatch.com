@@ -359,6 +359,52 @@ h1 {
     }
 }
 
+/* Landscape mode - position modal lower since user scrolled down */
+@media (orientation: landscape) and (max-height: 800px) {
+    .winPage {
+        top: 50%;
+        width: min(350px, calc(100vw - 30px));
+        height: auto;
+        min-height: 300px;
+        padding: 15px;
+    }
+    
+    .winPage h1 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    
+    .winPage p {
+        font-size: 13px;
+        margin: 8px 0;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .winPage {
+        top: 55%;
+        width: min(320px, calc(100vw - 20px));
+        min-height: 250px;
+        padding: 12px;
+    }
+    
+    .winPage h1 {
+        font-size: 20px;
+        margin-top: 8px;
+    }
+    
+    .winPage p {
+        font-size: 12px;
+        margin: 6px 0;
+    }
+    
+    .winPage .close-modal {
+        font-size: 28px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
 .winPage.closed {
     display: none;
     z-index: 1;

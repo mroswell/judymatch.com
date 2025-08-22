@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Position Test</title>
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(160deg, #ddbf4f 0%, #d33a32 100%);
+            min-height: 100vh;
+        }
+        
+        .test-info {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 2000;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #2e3d49;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background: #3572a8;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <div>Width: <span id="width"></span>px</div>
+        <div>Height: <span id="height"></span>px</div>
+        <div>Orientation: <span id="orientation"></span></div>
+    </div>
+    
+    <button onclick="showModal()">Show Congratulations Modal</button>
+    
+    <div class="winPage closed" id="testModal">
+        <button type="button" class="close-modal" onclick="this.parentElement.classList.add('closed')">&times;</button>
+        <div>
+            <h1>Congratulations!</h1>
+            <p>You have finished the<br>BONUS ROUND<br>with <span class="movesCount">15</span> Moves and <span class="starsCount">3</span> Stars.</p>
+            <p>Your time: <span class="finalTime">00:01:23</span></p>
+            <p>Wanna play again?</p>
+            <button type="button" role="button" class="playAgain btn btn-info">Play again!</button>
+        </div>
+    </div>
+    
+    <script>
+        function updateViewportInfo() {
+            document.getElementById('width').textContent = window.innerWidth;
+            document.getElementById('height').textContent = window.innerHeight;
+            document.getElementById('orientation').textContent = 
+                window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+        }
+        
+        function showModal() {
+            document.getElementById('testModal').classList.remove('closed');
+        }
+        
+        updateViewportInfo();
+        window.addEventListener('resize', updateViewportInfo);
+    </script>
+</body>
+</html>
