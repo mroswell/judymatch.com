@@ -42,9 +42,9 @@
       
       .bonus-deck {
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(60px, 85px);
-        gap: 3px;
-        padding: 6px;
+        grid-auto-rows: minmax(100px, 140px);
+        gap: 4px;
+        padding: 8px;
         width: 98vw;
         max-width: none;
       }
@@ -55,15 +55,34 @@
       
       .bonus-deck .card.show img,
       .bonus-deck .card.match img {
-        width: 85%;
-        height: 85%;
+        width: 90%;
+        height: 90%;
+      }
+    }
+
+    /* Small landscape (phones under 500px height) */
+    @media (orientation: landscape) and (max-height: 500px) {
+      h1 {
+        font-size: 14px;
+        margin: 4px 0 6px 0;
+      }
+      
+      .score-panel {
+        font-size: 10px;
+        margin-bottom: 4px;
+      }
+      
+      .bonus-deck {
+        grid-auto-rows: minmax(80px, 110px);
+        gap: 3px;
+        padding: 6px;
       }
     }
 
     /* Very small landscape (phones under 400px height) */
     @media (orientation: landscape) and (max-height: 400px) {
       h1 {
-        font-size: 14px;
+        font-size: 13px;
         margin: 3px 0 5px 0;
       }
       
@@ -89,7 +108,7 @@
       }
       
       .bonus-deck {
-        grid-auto-rows: minmax(50px, 70px);
+        grid-auto-rows: minmax(65px, 85px);
         gap: 2px;
         padding: 4px;
       }

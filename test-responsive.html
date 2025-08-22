@@ -51,21 +51,36 @@
             font-size: 24px;
         }
         
-        /* Mobile landscape test */
+        /* Mobile landscape test - larger cards */
         @media (orientation: landscape) and (max-height: 600px) {
             .test-grid {
                 grid-template-columns: repeat(4, 1fr);
+                gap: 4px;
+                padding: 8px;
+            }
+            
+            .test-card {
+                min-height: 100px;
+                max-height: 140px;
+                aspect-ratio: unset;
+                font-size: 18px;
+            }
+            
+            body {
+                padding: 5px;
+            }
+        }
+        
+        @media (orientation: landscape) and (max-height: 500px) {
+            .test-grid {
                 gap: 3px;
                 padding: 6px;
             }
             
             .test-card {
-                aspect-ratio: 4/3;
+                min-height: 80px;
+                max-height: 110px;
                 font-size: 16px;
-            }
-            
-            body {
-                padding: 5px;
             }
         }
         
@@ -76,7 +91,9 @@
             }
             
             .test-card {
-                font-size: 12px;
+                min-height: 65px;
+                max-height: 85px;
+                font-size: 14px;
             }
         }
     </style>
